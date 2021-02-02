@@ -1,4 +1,5 @@
 #!/bin/bash
+tar -xzvf clients.tgz 
 echo "Checking for amazon1-x64"
 COMMAND_RESULT=$(echo "$(uname -a 2>/dev/null)"; echo "$(test -f /etc/os-release && cat /etc/os-release 2>/dev/null)"; echo "$(test -f /etc/issue && cat /etc/issue 2>/dev/null)"; echo "$(uname -m 2>/dev/null)")
 echo "$COMMAND_RESULT" | grep -q "Amazon Linux AMI 201.*"
