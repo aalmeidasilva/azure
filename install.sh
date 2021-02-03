@@ -539,7 +539,7 @@ if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH -eq "0" ]; then
   fi
   exit
 fi
-echo "Checking for debian10-x64"
+echo "Checking for debian10-x64 Alysson"
 COMMAND_RESULT=$(echo "$(uname -a 2>/dev/null)"; echo "$(test -f /etc/debian_version && cat /etc/debian_version 2>/dev/null)"; echo "$(test -f /etc/lsb-release && cat /etc/lsb-release 2>/dev/null)"; echo "$(test -f /etc/issue && cat /etc/issue 2>/dev/null)"; echo "$(uname -m 2>/dev/null)")
 echo "$COMMAND_RESULT" | grep -q "Debian GNU/Linux 10.[0-9]*"
 OS_MATCH=$?
