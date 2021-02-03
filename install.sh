@@ -315,7 +315,7 @@ echo "$COMMAND_RESULT" | grep -q "Oracle Linux Server release 7.*"
 OS_MATCH=$?
 echo "$COMMAND_RESULT" | grep -q "x86_64"
 ARCH_MATCH=$?
-if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH       -eq "0" ]; then
+if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH -eq "0" ]; then
   rpm -i ./TaniumClient-7.4.4.1250-1.oel7.x86_64.rpm
   if [ "$?" -eq "0" ]; then
     echo "Installation successful. Copying tanium-init.dat."
