@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Checking for amazon1-x64"
 COMMAND_RESULT=$(echo "$(uname -a 2>/dev/null)"; echo "$(test -f /etc/os-release && cat /etc/os-release 2>/dev/null)"; echo "$(test -f /etc/issue && cat /etc/issue 2>/dev/null)"; echo "$(uname -m 2>/dev/null)")
 echo "$COMMAND_RESULT" | grep -q "Amazon Linux AMI 201.*"
@@ -315,7 +315,7 @@ echo "$COMMAND_RESULT" | grep -q "Oracle Linux Server release 7.*"
 OS_MATCH=$?
 echo "$COMMAND_RESULT" | grep -q "x86_64"
 ARCH_MATCH=$?
-if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATch -eq "0" ]; then
+if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH       -eq "0" ]; then
   rpm -i ./TaniumClient-7.4.4.1250-1.oel7.x86_64.rpm
   if [ "$?" -eq "0" ]; then
     echo "Installation successful. Copying tanium-init.dat."
@@ -509,7 +509,7 @@ echo "$COMMAND_RESULT" | grep -q "openSUSE Leap 15.*"
 OS_MATCH=$?
 echo "$COMMAND_RESULT" | grep -q "x86_64"
 ARCH_MATCH=$?
-if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATch -eq "0" ]; then
+if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH -eq "0" ]; then
   rpm -i ./TaniumClient-7.4.4.1250-1.sle15.x86_64.rpm
   if [ "$?" -eq "0" ]; then
     echo "Installation successful. Copying tanium-init.dat."
@@ -527,7 +527,7 @@ echo "$COMMAND_RESULT" | grep -q "SUSE Linux Enterprise .* 15"
 OS_MATCH=$?
 echo "$COMMAND_RESULT" | grep -q "x86_64"
 ARCH_MATCH=$?
-if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATch -eq "0" ]; then
+if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH -eq "0" ]; then
   rpm -i ./TaniumClient-7.4.4.1250-1.sle15.x86_64.rpm
   if [ "$?" -eq "0" ]; then
     echo "Installation successful. Copying tanium-init.dat."
@@ -545,7 +545,7 @@ echo "$COMMAND_RESULT" | grep -q "Debian GNU/Linux 10.[0-9]*"
 OS_MATCH=$?
 echo "$COMMAND_RESULT" | grep -q "x86_64"
 ARCH_MATCH=$?
-if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATch -eq "0" ]; then
+if [ $OS_MATCH -eq "0" ] && [ $ARCH_MATCH -eq "0" ]; then
   dpkg --force-all -i ./taniumclient_7.4.4.1250-debian10_amd64.deb
   if [ "$?" -eq "0" ]; then
     echo "Installation successful. Copying tanium-init.dat."
